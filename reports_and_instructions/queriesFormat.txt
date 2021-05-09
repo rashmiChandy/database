@@ -1,0 +1,52 @@
+CREATE TABLE orders (
+  orderNumber int,
+  orderDate varchar,
+  shippedDate varchar,
+  status varchar,
+  customerNumber int,
+  PRIMARY KEY (orderNumber),
+  FOREIGN KEY (customerNumber) REFERENCES customers (customerNumber)
+);
+
+queriesData = [{tableName: 'orders',
+	      attributeN: 'orderNumber',
+	      dataType: 'int',
+	      primaryKey: 'TRUE',
+	      foreignKey: 'FALSE',
+	      relationshipTable: 'FALSE'
+	      relationshipAttribute: 'FALSE'	
+	     },
+	     {tableName: 'orders',
+	      attributeN: 'orderDate',
+	      dataType: 'varchar',
+	      primaryKey: 'FALSE',
+	      foreignKey: 'FALSE',
+	      relationshipTable: 'FALSE'
+	      relationshipAttribute: 'FALSE'
+	     },
+	     {tableName: 'orders',
+	      attributeN: 'shippedDate',
+	      dataType: 'varchar',
+	      primaryKey: 'FALSE',
+	      foreignKey: 'FALSE',
+	      relationshipTable: 'FALSE'
+	      relationshipAttribute: 'FALSE'
+	     },
+	     {tableName: 'orders',
+	      attributeN: 'status',
+	      dataType: 'varchar',
+	      primaryKey: 'FALSE',
+	      foreignKey: 'FALSE',
+	      relationshipTable: 'FALSE'
+	      relationshipAttribute: 'FALSE'
+	     },
+	     {tableName: 'orders',
+	      attributeN: 'customerNumber',
+	      dataType: 'int',
+	      primaryKey: 'FALSE',
+	      foreignKey: 'TRUE',
+	      relationshipTable: 'customers'
+	      relationshipAttribute: 'customerNumber'
+	     }
+	   ]
+

@@ -1,0 +1,177 @@
+C:\Users\Rajan\AppData\Local\Programs\Python\Python39\python.exe C:/Users/Rajan/Downloads/5408/5408-finalproject/main_module/main.py
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:1
+Enter SQL username:testUser1
+Enter your password:test
+User Created Successfully, creation time:2020-12-03 21:32:20.930087
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:1
+Enter SQL username:testUser1
+Enter your password:test
+User already exists, choose a different name!
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:1
+Enter SQL username:testUser2
+Enter your password:test2
+User Created Successfully, creation time:2020-12-03 21:33:06.446001
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:2
+Enter SQL username:testUser1
+Enter your password:gh
+Invalid username or password, authentication unsuccessful
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:2
+Enter SQL username:testUser1
+Enter your password:test
+User authentication successful, login time:2020-12-03 21:33:51.621219
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:3
+
+*************** Welcome to My SQL Command Prompt *************** 
+Command to exit command:logout
+SQL>Create table
+---The query is create---
+Create Query Invalid
+SQL>CREATE DATABASE sampledb
+---The query is create database---
+Database sampledb created
+SQL>CREATE TABLE customers (customerNumber int,customerName varchar,customerLastName varchar,city varchar,postalCode int,PRIMARY KEY (customerNumber))
+---The query is create---
+Database is not selected, Use a database
+SQL>use sampledb
+---The query is use---
+Use sampledb
+SQL>CREATE TABLE customers (customerNumber int,customerName varchar,customerLastName varchar,city varchar,postalCode int,PRIMARY KEY (customerNumber))
+---The query is create---
+Table created
+SQL>INSERT INTO customers (customerNumber,customerName,customerLastName,city,postalCode) VALUES (3,'Amelia','H','Ontario','B3H 4R2');
+---The query is insert---
+SQL>INSERT INTO customers (customerNumber,customerName,customerLastName,city,postalCode) VALUES (2,'Kevin','K','Torronto','B3H 4R2');
+---The query is insert---
+SQL>CREATE TABLE order (orderNumber int,orderLocation varchar,orderArea varchar,status varchar,customerNumber int,PRIMARY KEY (orderNumber))
+---The query is create---
+Table created
+SQL>INSERT INTO order (orderNumber,orderLocation,orderArea,status,customerNumber) VALUES (1,'Halifax','Nova Scotia','inprogress',2);
+---The query is insert---
+SQL>
+CREATE TABLE orderDetails (orderDetailsId int,orderNumber int,productCode varchar,quantityOrdered int,priceEach decimal,PRIMARY KEY (orderDetailsId),FOREIGN KEY (orderNumber) REFERENCES order (customerNumber));SQL>
+---The query is create---
+Table created
+SQL>SELECT * from customers;
+---The query is select---
+   customerNumber customerName customerLastName      city postalCode
+0               3       Amelia                H   Ontario    B3H 4R2
+1               2        Kevin                K  Torronto    B3H 4R2
+SQL>SELECT customerNumber,customerName,customerLastName,city,postalCode from customers where customerName = 'Amelia';
+---The query is select---
+   customerNumber customerName customerLastName     city postalCode
+0               3       Amelia                H  Ontario    B3H 4R2
+SQL>UPDATE customers SET customerName = 'Diana' WHERE customerName = 'Amelia'
+---The query is update---
+SQL>SELECT * from customers;
+---The query is select---
+   customerNumber                customerName  ...      city postalCode
+0               3  'Diana'   Ontario    B3H 4R2
+1               2   Kevin   Torronto    B3H 4R2
+
+[2 rows x 5 columns]
+SQL>UPDATE customers SET customerName = 'Rashmi' WHERE customerNumber = 3
+---The query is update---
+SQL>SELECT * from customers;
+---The query is select---
+   customerNumber customerName customerLastName      city postalCode
+0               3     'Rashmi'                H   Ontario    B3H 4R2
+1               2        Kevin                K  Torronto    B3H 4R2
+SQL>DELETE FROM customers WHERE customerName = 'Rashmi';
+---The query is delete---
+SQL>DELETE FROM customers WHERE customerNumber = 2;
+---The query is delete---
+SQL>
+SQL>
+SQL>
+SQL>
+SQL>
+SQL>logout
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:4
+
+*************** My SQL dump *************** 
+Enter the username:testUser1
+Enter the database name:sampledb
+Enter the filepath for dump:C:\Users\Rajan\Desktop\databases\sampledb\dump5408
+---The query is use---
+Use sampledb
+mysqldump -u testUser1 -p sampledb > C:\Users\Rajan\Desktop\databases\sampledb\dump5408
+---The query is mysqldump---
+Sql dump generated
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:5
+
+*************** Export ERD ***************
+Enter the filepath for ERD:C:\Users\Rajan\Desktop\databases\sampledb\erd5408
+Enter the database name to export:sampledb
+---The query is use---
+Use sampledb
+---The query is export erd---
+ERD generated
+|************** Welcome to Custom My SQL Database **************|
+1. New user
+2. Existing user
+3. MySQL Command prompt
+4. MySQL Dump
+5. Export ERD
+6. Exit from application
+Select one of option from above:6
+
+Disconnected!
+|************** Thank you **************|
+
+Process finished with exit code 0

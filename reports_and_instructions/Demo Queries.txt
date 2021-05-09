@@ -1,0 +1,70 @@
+CREATE DATABASE sampledb
+
+use sampledb
+
+CREATE TABLE customers (customerNumber int,customerName varchar,customerLastName varchar,city varchar,postalCode int,PRIMARY KEY (customerNumber))
+
+INSERT INTO customers (customerNumber,customerName,customerLastName,city,postalCode) VALUES (3,'Amelia','H','Ontario','B3H 4R2');
+
+INSERT INTO customers (customerNumber,customerName,customerLastName,city,postalCode) VALUES (2,'Kevin','K','Torronto','B3H 4R2');
+
+CREATE TABLE order (orderNumber int,orderLocation varchar,orderArea varchar,status varchar,customerNumber int,PRIMARY KEY (orderNumber))
+
+INSERT INTO order (orderNumber,orderLocation,orderArea,status,customerNumber) VALUES (1,'Halifax','Nova Scotia','inprogress',2);
+
+CREATE TABLE orderDetails (orderDetailsId int,orderNumber int,productCode varchar,quantityOrdered int,priceEach decimal,PRIMARY KEY (orderDetailsId),FOREIGN KEY (orderNumber) REFERENCES order(orderNumber));
+
+INSERT INTO orderDetails (orderDetailsId,orderNumber,productCode,quantityOrdered,priceEach) VALUES (10, 1,'XAM12',2, '235.5');
+
+SELECT * from customers;
+
+SELECT customerNumber,customerName,customerLastName,city,postalCode from customers where customerName = 'Amelia';
+
+UPDATE customers SET customerName = 'Rashmi' WHERE customerNumber = 3
+
+DELETE FROM customers WHERE customerNumber = 2;
+
+rashmi
+sampledb
+C:\Users\Rajan\Desktop\databases\sampledb\dump5408
+
+C:\Users\Rajan\Desktop\databases\sampledb\erd5408
+sampledb
+
+=======================================================================================================================================
+
+CREATE DATABASE sampledb;
+
+CREATE TABLE customers (customerNumber int,customerName varchar,customerLastName varchar,city varchar,postalCode int,PRIMARY KEY (customerNumber));
+
+use sampledb;
+
+CREATE TABLE customers (customerNumber int,customerName varchar,customerLastName varchar,city varchar,postalCode int,PRIMARY KEY (customerNumber));
+
+CREATE TABLE order (orderNumber int,orderLocation varchar,orderArea varchar,status varchar,customerNumber int,PRIMARY KEY (orderNumber));
+
+CREATE TABLE orderDetails (orderDetailsId int,orderNumber int,productCode varchar,quantityOrdered int,priceEach decimal,PRIMARY KEY (orderDetailsId),FOREIGN KEY (orderNumber) REFERENCES order(orderNumber));
+
+INSERT INTO customers (customerNumber,customerName,customerLastName,city,postalCode) VALUES (2,'Kevin','K','Torronto','B3H 4R2');
+
+INSERT INTO customers (customerNumber,customerName,customerLastName,city,postalCode) VALUES (3,'Amelia','H','Ontario','B3H 4R2');
+
+INSERT INTO order (orderNumber,orderLocation,orderArea,status,customerNumber) VALUES (1,'Halifax','Nova Scotia','inprogress',2);
+
+INSERT INTO orderDetails (orderDetailsId,orderNumber,productCode,quantityOrdered,priceEach) VALUES (10, 1,'XAM12',2, '235.5');
+
+SELECT * from customers;
+
+SELECT customerNumber,customerName from customers where customerName = 'Amelia';
+
+UPDATE customers SET customerName = 'Rashmi' WHERE customerNumber = 3
+
+DELETE FROM customers WHERE customerNumber = 2;
+
+rashmi
+sampledb
+C:\Users\Rajan\Desktop\databases\sampledb\dump5408
+
+
+C:\Users\Rajan\Desktop\databases\sampledb\erd5408
+sampledb

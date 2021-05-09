@@ -1,0 +1,2 @@
+orderNumber,orderDate,shippedDate,status,customerNumber
+100,20-11-2020,25-11-2020,delivered,1
